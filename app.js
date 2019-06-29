@@ -14,7 +14,7 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 var methodOverride = require("method-override");
 
-mongoose.connect("process.env.DATABASEURL",
+mongoose.connect(process.env.DATABASEURL,
 {useNewUrlParser: true,
  useCreateIndex: true}).then(() => {
 	console.log("Connected to DB");
