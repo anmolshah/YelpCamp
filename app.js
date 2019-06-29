@@ -15,7 +15,13 @@ var indexRoutes = require("./routes/index");
 var methodOverride = require("method-override");
 
 
-mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://devsprout:boomtower123@cluster0-cdztc.mongodb.net/test?retryWrites=true&w=majority", 
+{useNewUrlParser: true,
+ useCreateIndex: true}).then(() => {
+	console.log("Connected to DB");
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});
 
 //seedDB();
 /*Campground.create({
